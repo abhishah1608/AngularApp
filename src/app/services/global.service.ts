@@ -19,6 +19,7 @@ export class GlobalService {
 
     this.language = 'tr';
 
-    this.translatorfilepath = '../../' + this.language + '/assets/translatorfiles/';
+    // this.translatorfilepath = '../../' + this.language + '/assets/translatorfiles/';
+    this.translatorfilepath = 'https://abhishah1608.github.io/AngularInternationalized/assets/translatorfiles/';
   }
 }
