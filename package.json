@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:fr": "ng build --aot --configuration=production-fr",
+    "build:en": "ng build --aot --configuration=production-en",
+    "build:tr": "ng build --aot --configuration=production-tr"
   },
   "private": true,
   "dependencies": {
