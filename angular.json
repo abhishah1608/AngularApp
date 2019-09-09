@@ -20,9 +20,11 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/assets/translatorfiles"
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets"
+                }
             ],
             "styles": [
               "src/styles.css",
