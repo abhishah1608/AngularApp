@@ -1,0 +1,27 @@
+<br>
+<br>
+<br>
+<h1 style="color:red;text-align: center" i18n="@@cartheader">Item in Cart</h1>
+<div id="cart" *ngIf="bookCart != null">  
+<table border="1" align="center">
+    <thead>
+        <td i18n="@@cartBookName">Book Name</td>
+        <td i18n="@@cartQuantity">Quantity</td>
+        <td i18n="@@carttotalPrice">Total Price</td>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of bookCart.detail">
+          <td>{{book.BookName}}</td>
+          <td>{{book.Quantity}}</td>
+          <td>{{currencysymbol}}{{book.total}}</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+<br>
+<div style="text-align: center" *ngIf="bookCart != null">
+  <input type="button" class="btn-primary" (click)="AddToCart()" value="Buy" i18n-value="@@cartBuy">
+  </div>
+  <div *ngIf="bookCart == null">
+    <h3 style="text-align: center;color:red" i18n="@@NoItemdisplaymsg">No Item Found in Cart</h3>
+  </div>

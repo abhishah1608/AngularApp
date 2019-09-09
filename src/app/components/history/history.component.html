@@ -1,0 +1,16 @@
+<br>
+<br>
+<br>
+<h1 style="color:blueviolet;text-align:center" i18n="@@OrderHistory">Order History</h1>
+<div *ngFor="let info of historyinfo" style="text-align: center">
+    <br>
+    <h3>{{info.OrderId}}</h3>
+    <div *ngFor="let detail of info.purchaseInfo">
+      <li> 
+        <ng-container i18n="@@historyBookName">Book Name</ng-container>
+        : {{detail.BookName}} &nbsp; 
+        <ng-container i18n="@@historyQty">Quantity</ng-container> : {{detail.Quantity}} &nbsp; 
+        <ng-container i18n="@@historyPrice">Price </ng-container>: {{detail.total | currency:'INR'}} 
+      </li>
+    </div>
+</div>

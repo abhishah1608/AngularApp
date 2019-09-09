@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>{{title | languageTranslator: language : externalfilestring}}</h2>
+<mat-dialog-content>
+  {{message | languageTranslator: language : externalfilestring}}
+</mat-dialog-content>
+ <div mat-dialog-actions>
+   <div *ngIf=!showOk>
+    <button class="mat-raised-button mat-primary" (click)="onYesClick()" cdkFocusInitial>{{strYes | languageTranslator: language : externalfilestring}}</button>
+   <button class="mat-raised-button"  (click)="onNoClick()">{{strNo | languageTranslator: language : externalfilestring}}</button>
+  </div>
+  <div *ngIf=showOk>
+      <button class="mat-raised-button mat-primary" (click)="onYesClick()" cdkFocusInitial>{{strOk | languageTranslator: language : externalfilestring}}</button>
+  </div>
+ </div>

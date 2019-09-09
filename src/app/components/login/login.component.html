@@ -1,0 +1,57 @@
+<div class="container-fluid">
+    <div class="container">
+        <h2 class="text-center" id="title" i18n="@@BookStore">BookStore Application</h2>
+         <hr>
+        <div class="row">
+            <div class="col-md-5">
+                <div>
+                    <p *ngIf="messageerrors" style="color:red" i18n="@@signuperrormesg">{{messageerrors | languageTranslator: language : externalfilestring}}</p>
+                </div>
+                 <form role="form" [formGroup]="UserSignUp" (ngSubmit)="OnSignUp()">
+                    <fieldset>							
+                        <p class="text-uppercase pull-center" i18n="@@SignUP"> SIGN UP.</p>	
+                         <div class="form-group">
+                            <input type="text" name="usernameSignup" id="usernameSignup" class="form-control input-lg" i18n-placeholder="@@usernameregistration" placeholder="username"  formControlName="SignUpUsername" (blur)="showErrorforspecificcontrol('SignUpUsername')">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" class="form-control input-lg" i18n-placeholder="@@emailregistrationform" placeholder="Email Address" formControlName="SignUpEmail" (blur)="showErrorforspecificcontrol('SignUpEmail')">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="passwordreg" id="passwordreg" class="form-control input-lg" i18n-placeholder="@@passregistrationform" placeholder="Password" formControlName="SignUpPass" (blur)="showErrorforspecificcontrol('SignUpPass')">
+                        </div>
+                            <div class="form-group">
+                            <input type="password" name="password2" id="password2" class="form-control input-lg" i18n-placeholder="@@confirmpassregistrationform" placeholder="Confirm password" formControlName="SignUpConfirmpass" (blur)="showErrorforspecificcontrol('SignUpConfirmpass')">
+                        </div>
+                         <div>
+                             <input type="submit" class="btn btn-lg btn-primary" value="Register" i18n-value="@@btnRegister">
+                         </div>
+                    </fieldset>
+                </form> 
+            </div>
+            
+            <div class="col-md-2">
+                <!-------null------>
+            </div> 
+            <div class="col-md-5">
+                    <div>
+                        <p *ngIf="messageloginerrors" style="color:red" i18n="@@messageloginerrors">{{messageloginerrors | languageTranslator: language : externalfilestring}}</p>
+                    </div>
+                      <form [formGroup]="login" (ngSubmit)="Onlogin()">
+                    <fieldset>							
+                        <p class="text-uppercase" i18n="@@pLoginAccount"> Login using your account: </p>		
+                        <div class="form-group">						
+            <input type="email" name="username" id="username" class="form-control input-lg" i18n-placeholder="@@ploginusername" placeholder="username" formControlName="loginUserName" maxlength="20" minlength="6">
+                        </div>
+                        <div class="form-group">
+            <input type="password" name="password" id="password" class="form-control input-lg" i18n-placeholder="@@ploginpass" placeholder="Password" formControlName="loginPass" minlength="6" maxlength="20">
+                        </div>
+                        <div>
+            <input type="submit" class="btn btn-primary" value="Sign In" i18n-value="@@btnSignIn">
+            <input type="button" class="btn btn-primary" value="Forgot password" style="margin-left: 25px;" i18n-value="@@btnForgotpassword">
+                        </div>
+                     </fieldset>
+            </form>	
+            </div>
+        </div>
+    </div>
+</div>

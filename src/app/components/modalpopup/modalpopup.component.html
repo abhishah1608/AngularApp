@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{title  | languageTranslator: language : externalfilestring}}</h4>
+  </div>
+  <div class="modal-body">
+    <p>{{body | languageTranslator: language : externalfilestring}}</p>
+  </div>
+  <div class="modal-footer">
+    <div [ngSwitch] = "modaltype">
+     <div *ngSwitchCase='"1"'> 
+    <button type="button" class="btn btn-outline-dark" (click)="ok()" >{{strOk  | languageTranslator: language : externalfilestring}}</button>
+    </div>
+    <div *ngSwitchCase='"2"'> 
+        <button type="button" class="btn btn-outline-dark" (click)="Yes()" style="margin-right:10px;">{{strYes  | languageTranslator: language : externalfilestring}}</button>
+        <button type="button" class="btn btn-outline-dark" (click)="No()">{{strNo  | languageTranslator: language : externalfilestring}}</button>
+        </div>
+  </div>
+  </div>

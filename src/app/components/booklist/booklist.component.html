@@ -1,0 +1,28 @@
+<br>
+<br>
+<br>
+<div class="container">
+ <div class="dx-viewport">
+   <div class="demo-container"> 
+<dx-data-grid id="gridContainer" [showBorders]="true" [dataSource]="books"  [remoteOperations]="true" [showColumnLines]="true" 
+[showRowLines]="false" [columnAutoWidth]="true" (onRowPrepared)="editorPreparing($event)">
+<dxo-editing mode="row" [allowUpdating]="true" [useIcons]="true"></dxo-editing>
+    <dxi-column dataField="BookName" caption="Book Name" i18n-caption="@@BooklistBookName"></dxi-column>
+    <dxi-column dataField="BookAuthor" caption="Book Author" i18n-caption="@@BooklistBookAuthor"></dxi-column>
+    <dxi-column dataField="Description" cellTemplate="cellTemplate" caption="Book Descrition" i18n-caption="@@BooklistBookDescription"></dxi-column>
+    <dxi-column dataField="stock" caption="Book Stock" i18n-caption="@@BooklistBookStock"></dxi-column>
+    <dxi-column dataField="BookPrice" caption="Book Price" i18n-caption="@@BooklistBookPrice"></dxi-column>
+    <dxi-column type="buttons" caption="Add" i18n-caption="@@BooklistbtnBookAdd">
+        <dxi-button name="Add" [onClick]="onAddClick" icon="plus" hint="Add" i18n-hint="@@BooklistbtnAddhint"></dxi-button>
+    </dxi-column>
+    <dxi-column type="buttons" caption="Remove" i18n-caption="@@BooklistbtnBookRemove">
+        <dxi-button name="Remove" [onClick]="onRemoveClick" icon="fa fa-minus" hint="Remove" i18n-hint="@@BooklistbtnRemovehint"></dxi-button>
+    </dxi-column>
+
+    <div *dxTemplate="let data of 'cellTemplate'">
+        <textarea readonly>{{data.value}}</textarea>
+    </div>
+</dx-data-grid>
+</div>
+</div>
+</div>
