@@ -44,6 +44,8 @@ export class PaymentForm {
 
         public product: string;
 
+        public udf1: string;
+
         constructor() {
 
         }

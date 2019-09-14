@@ -23,7 +23,9 @@ export class PaymentService {
       'Access-Control-Allow-Origin': '*',
       Accept: 'application/json',
       'Access-Control-Allow-Methods': '*',
-      'Access-Control-Allow-Headers': '*'})
+      'Access-Control-Allow-Headers': '*',
+      Authorization: 'Bearer ' + sessionStorage.getItem('token')
+    })
     };
 
     return this.httpclient.post<PaymentForm>(urlpath, payment, httpOptions);
@@ -36,7 +38,9 @@ export class PaymentService {
       'Access-Control-Allow-Origin': '*',
       Accept: 'application/json',
       'Access-Control-Allow-Methods': '*',
-      'Access-Control-Allow-Headers': '*'})
+      'Access-Control-Allow-Headers': '*',
+      Authorization: 'Bearer ' + sessionStorage.getItem('token')
+    })
     };
 
     return this.httpclient.get<PaymentInfo>(urlpath, httpOptions);

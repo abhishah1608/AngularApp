@@ -37,7 +37,9 @@ export class HistoryComponent implements OnInit, OnDestroy {
       'Access-Control-Allow-Origin': '*',
       Accept: 'application/json',
       'Access-Control-Allow-Methods': '*',
-      'Access-Control-Allow-Headers': '*'})
+      'Access-Control-Allow-Headers': '*',
+      Authorization: 'Bearer ' + sessionStorage.getItem('token')
+    })
     };
 
     this.historyserviceobj = this.httpclient.post(apiurl, user, httpOptions).subscribe((data) => {

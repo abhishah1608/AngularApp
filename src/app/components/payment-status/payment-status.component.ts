@@ -62,11 +62,13 @@ export class PaymentStatusComponent implements OnInit, OnDestroy {
           'Access-Control-Allow-Origin': '*',
           Accept: 'application/json',
           'Access-Control-Allow-Methods': '*',
-          'Access-Control-Allow-Headers': '*'})
+          'Access-Control-Allow-Headers': '*',
+           Authorization: 'Bearer ' + sessionStorage.getItem('token')
+        })
         };
         const email: SendEmail = new SendEmail();
-        email.From = 'abhishah1608@gmail.com';
-        email.password = 'abhishah123@.';
+        email.From = '';
+        email.password = '';
         email.Subject = 'Your Order has been Successfully placed for Books from Bookstore with OrderId  ' + d.OrderId;
         let body = sessionStorage.getItem('body');
         if (this.amount !== undefined && this.amount != null) {

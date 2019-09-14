@@ -101,6 +101,7 @@ export class LoginService {
         sessionStorage.setItem('sessionId', useraddclass.LoginId.toString());
         sessionStorage.setItem('UserId', useraddclass.UserId.toString());
         sessionStorage.setItem('email', useraddclass.emailId);
+        sessionStorage.setItem('token', useraddclass.seckey);
         this.router.navigate(['/app/booklist'], {relativeTo: this.route});
         bRetval = true;
       } else {

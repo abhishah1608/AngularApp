@@ -93,6 +93,8 @@ export class PaymentComponent implements OnInit, OnDestroy {
 
         this.formobj.loginId = +sessionStorage.getItem('sessionId');
 
+        this.formobj.udf1 = this.global.paymenturl;
+
         this.paymentserviceobj = this.paymentservice.Generateform(this.formobj).subscribe((formobj) => {
 
             const form = document.createElement('form');
@@ -242,8 +244,16 @@ export class PaymentComponent implements OnInit, OnDestroy {
             input.setAttribute('value', formobj.zipCode);
             form.appendChild(input);
 
+            input = document.createElement('input');
+            input.setAttribute('type', 'hidden');
+            input.setAttribute('name', 'udf1');
+            input.setAttribute('id', 'udf1');
+            input.setAttribute('value', formobj.udf1);
+            form.appendChild(input);
+
             // append form.
             document.body.appendChild(form);
+
 
             // submit form.
             form.submit();

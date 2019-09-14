@@ -21,7 +21,9 @@ export class BookapiService {
       accept: 'application/json',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': '*',
-      'Access-Control-Allow-Headers': '*'})
+      'Access-Control-Allow-Headers': '*',
+       Authorization: 'Bearer ' + sessionStorage.getItem('token')
+      })
     };
     return this.httpclient.get<Book[]>(urlpath, httpOptions);
   }

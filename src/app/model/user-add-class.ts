@@ -5,6 +5,8 @@ export class UserAddClass {
 
     emailId: string;
 
+    seckey: string;
+
     constructor() {
 
     }
