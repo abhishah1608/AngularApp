@@ -2946,7 +2946,7 @@ var GlobalService = /** @class */ (function () {
         this.language = 'en';
         // this.translatorfilepath = '../../' + this.language + '/assets/translatorfiles/';
         this.translatorfilepath = 'https://abhishah1608.github.io/AngularInternationalized/assets/translatorfiles/';
-        this.paymenturl = 'https://abhishah1608.github.io/AngularInternationalized/';
+        this.paymenturl = 'https://abhishah1608.github.io/AngularApp/en/';
     }
     GlobalService.ngInjectableDef = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ factory: function GlobalService_Factory() { return new GlobalService(); }, token: GlobalService, providedIn: "root" });
     return GlobalService;
