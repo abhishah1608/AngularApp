@@ -263,7 +263,7 @@
           <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
-      trans-unit id="payfirstName" datatype="html">
+      <trans-unit id="payfirstName" datatype="html">
         <source>First Name <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/payment/payment.component.html</context>

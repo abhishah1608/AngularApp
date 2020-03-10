@@ -13,6 +13,9 @@ export class LanguageTranslatorPipe implements PipeTransform {
 
   transform(source: string, language: string, translatorSource: any): string {
          let retval: string = null;
+         if (language === 'en') {
+             retval = source;
+         } else {
          this.obj = translatorSource as Translator[];
          if (this.obj && this.obj.length > 0) {
            this.obj.forEach(element => {
@@ -30,6 +33,7 @@ export class LanguageTranslatorPipe implements PipeTransform {
                  }
             });
          }
+        }
          return retval;
   }
 
